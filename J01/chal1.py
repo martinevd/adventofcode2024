@@ -1,8 +1,8 @@
 # Créé par Martin, le 01/12/2024 en Python 3.7
 
 
-tab1 = [3,4,2,1,3,3]
-tab2 = [4,3,5,3,9,3]
+tab1 = []
+tab2 = []
 
 with open('input1.txt', 'r') as fichier:
     for ligne in fichier:
