@@ -22,20 +22,26 @@ dist = 0
 for i in range (0,n):
     dist += abs(tab1[i] - tab2[i])
 
-print(dist)
+print("Distance:",dist)
 
 #Challenge2
 
+i = 0
 j = 0
 sim = 0
 
-for i in range (0,n):
-    count = 0
+while i < n :
+    count_i = 1
+    count_j = 0
+    while (i < n-1) and (tab1[i] == tab1[i+1]):
+        count_i +=1
+        i+=1
     while (j < n) and (tab1[i] > tab2[j]) :
         j+=1
     while (j < n) and (tab1[i] == tab2[j]):
-        count+=1
+        count_j+=1
         j+=1
-    sim += tab1[i] * count
+    sim += tab1[i] * count_j * count_i
+    i+=1
 
-print(sim)
+print("Similarité :",sim)
