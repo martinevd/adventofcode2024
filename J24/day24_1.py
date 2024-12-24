@@ -13,7 +13,7 @@ while datas[i] != "":
 
 i+=1
 
-gates = []
+gates_waiting = []
 z_wires = []
 
 def apply_gate(w1,w2,logic,woutput):
@@ -28,15 +28,15 @@ def apply_gate(w1,w2,logic,woutput):
         if woutput[0] == "z":
             z_wires.append(woutput)
     else:
-        gates.append((w1,logic,w2,woutput))
+        gates_waiting.append((w1,logic,w2,woutput))
 
 while i < n:
     w1,logic,w2,_,woutput = datas[i].split(" ")
     apply_gate(w1,w2,logic,woutput)
     i += 1
 
-while gates:
-    w1,logic,w2,woutput = gates.pop(0)
+while gates_waiting:
+    w1,logic,w2,woutput = gates_waiting.pop(0)
     apply_gate(w1,w2,logic,woutput)
 
 

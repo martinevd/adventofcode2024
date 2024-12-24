@@ -29,14 +29,13 @@ while i < n:
     gates[woutput] = (w1,logic,w2)
     i+=1
 
-#Trouver les permutation de z
+#Trouver les permutations de z
 for i in range(2,N):
     z = "z" + "0"*(2-len(str(i))) + str(i)
     w1,logic,w2 = gates[z]
     if logic != "XOR":
         print(z)
 
-permutated = []
 
 for woutput,(w1,logic,w2) in gates.items():
     #Verifie xi XOR yi -> ai (ai != z00)
